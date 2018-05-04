@@ -9,14 +9,10 @@ async def test():
     await orm_ref.create_pool(loop=loop, port=3306, user='root', password='123', db='awesome')
 
     #没有设置默认值的一个都不能少
-    u = User(name='dflhuang23', email='dflhuang@qq.com3', passwd='012323', image='about:blank2', id='3372')
+    u = User(name='dflhuang2322', email='dflhuang@qq.com223', passwd='012323', image='about:blank2', id='33722')
 
     await u.save()
-    data = User.findAll()
-    with open("./tt", "w") as fd:
-        fd.write(str(data))
-
-
+    await orm_ref.close_pool()
 # 获取EventLoop:
 loop = asyncio.get_event_loop()
 
